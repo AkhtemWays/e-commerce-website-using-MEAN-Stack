@@ -11,6 +11,8 @@ const mongouri = config.mongouri;
 // middleware
 const app = express();
 app.use(cors());
+//routes
+app.use("/api", require("./routes/data.routes"));
 
 const start = async (req, res) => {
   try {
