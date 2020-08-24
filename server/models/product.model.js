@@ -14,6 +14,7 @@ const productSchema = new Schema({
   discount: Number,
   shipping_fee: Number,
   sold: Number,
+  quantity: Number,
 });
 
 module.exports = model("products", productSchema);

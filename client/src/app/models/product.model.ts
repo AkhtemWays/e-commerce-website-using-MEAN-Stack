@@ -12,4 +12,5 @@ export class Product {
   discount: Number;
   shipping_fee: Number;
   sold: Number;
+  quantity: Number;
 }

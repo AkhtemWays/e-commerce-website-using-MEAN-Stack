@@ -16,8 +16,8 @@ const userSchema = new Schema({
     zipcode: String,
     flat: Number,
   },
-  username: String,
-  password: String,
+  username: { type: String, unique: true, required: true },
+  password: { type: String, required: true },
   cart: [{ ref: "products" }],
 });
 
