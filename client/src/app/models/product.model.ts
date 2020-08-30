@@ -1,16 +1,17 @@
 export class Product {
-  price: Number;
-  availability: Number;
-  category: String;
-  description: String;
-  name: String;
-  brand: String;
+  _id: string;
+  price: number;
+  availability: number;
+  category: string;
+  description: string;
+  name: string;
+  brand: string;
   date_published: Date;
-  image: String;
-  clicks: Number;
-  bestseller: Boolean;
-  discount: Number;
-  shipping_fee: Number;
-  sold: Number;
-  quantity: Number;
+  image: string;
+  clicks: number;
+  bestseller: boolean;
+  discount: number;
+  shipping_fee: number;
+  sold: number;
+  quantity: number;
 }

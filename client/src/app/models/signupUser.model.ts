@@ -1,12 +1,4 @@
-import { Product } from './product.model';
-
-class Order {
-  id: String;
-  // order: Product[];
-}
-
-export class CurrentUser {
-  orders: Array<Order>;
+export class SignupUser {
   address: {
     country: String;
     city: String;
@@ -17,5 +9,4 @@ export class CurrentUser {
   };
   username: String;
   password: String;
-  cart: Product[];
 }

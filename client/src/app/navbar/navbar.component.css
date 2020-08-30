@@ -15,6 +15,7 @@ button {
   text-decoration: none;
   cursor: pointer;
 }
+
 nav {
   display: flex;
   justify-content: flex-end;

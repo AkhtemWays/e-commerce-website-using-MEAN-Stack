@@ -1,0 +1,37 @@
+<div class="container">
+  <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+    <div>
+      <label for="username">Username</label>
+      <input type="text" name="username" [(ngModel)]="user.username" />
+    </div>
+    <div>
+      <label for="password">Password</label>
+      <input type="password" name="password" [(ngModel)]="user.password" />
+    </div>
+    <div>
+      <label for="country">Country</label>
+      <input type="text" name="country" [(ngModel)]="user.address.country" />
+    </div>
+    <div>
+      <label for="city">City</label>
+      <input type="text" name="city" [(ngModel)]="user.address.city" />
+    </div>
+    <div>
+      <label for="street">Street</label>
+      <input type="text" name="street" [(ngModel)]="user.address.street" />
+    </div>
+    <div>
+      <label for="house">House</label>
+      <input type="text" name="house" [(ngModel)]="user.address.house" />
+    </div>
+    <div>
+      <label for="zipcode">Zipcode</label>
+      <input type="text" name="zipcode" [(ngModel)]="user.address.zipcode" />
+    </div>
+    <div>
+      <label for="flat">Flat</label>
+      <input type="text" name="flat" [(ngModel)]="user.address.flat" />
+    </div>
+    <button type="submit">Submit</button>
+  </form>
+</div>

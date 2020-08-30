@@ -1,0 +1,24 @@
+<div class="container ctg-products">
+  <div
+    *ngFor="let product of products"
+    class="ctg-products__card"
+    (click)="redirect(product._id)"
+  >
+    <div class="ctg-products__top_field">
+      <h6 class="">
+        {{ product.name }}
+      </h6>
+    </div>
+    <img src="{{ product.image }}" alt="no image" />
+    <div class="ctg-products__bottom_field">
+      <h6 *ngIf="product.availability; else notInStock" class="common">
+        In stock
+      </h6>
+      <h6 class="common">Sold: {{ product.sold }}</h6>
+    </div>
+  </div>
+</div>
+
+<ng-template #notInStock>
+  <h6 class="common">Out of stock</h6>
+</ng-template>

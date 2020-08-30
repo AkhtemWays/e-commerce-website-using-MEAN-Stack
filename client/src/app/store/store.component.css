@@ -1,0 +1,23 @@
+.cards {
+  margin: 2em auto;
+  display: flex;
+}
+.card img {
+  width: 60%;
+  height: 400px;
+  margin: auto;
+}
+h1 {
+  font-family: Georgia;
+  font-style: oblique;
+  font-weight: bold;
+  font-size: 35px;
+  text-decoration: none;
+  padding: 10px;
+  text-align: center;
+  color: red;
+}
+.card {
+  margin: 1em 2em;
+  cursor: pointer;
+}

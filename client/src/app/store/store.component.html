@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="cards" *ngFor="let category of categoriesBatched">
+    <div class="card" (click)="redirectByCategory(category[0])">
+      <h1>{{ category[0].charAt(0).toUpperCase() + category[0].slice(1) }}</h1>
+      <img src="{{ getCategoryImageLocation(category[0]) }}" alt="" />
+    </div>
+    <div class="card" (click)="redirectByCategory(category[1])">
+      <h1>{{ category[1].charAt(0).toUpperCase() + category[1].slice(1) }}</h1>
+      <img src="{{ getCategoryImageLocation(category[1]) }}" alt="" />
+    </div>
+  </div>
+</div>

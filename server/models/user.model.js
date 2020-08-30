@@ -1,24 +1,23 @@
 const { Types, Schema, model } = require("mongoose");
-const productSchema = require("./product.model");
 
 const userSchema = new Schema({
-  orders: [
-    {
-      type: Types.ObjectId,
-      order: [{ type: Types.ObjectId, ref: "products" }],
-    },
-  ],
+  //   orders: [
+  //     {
+  //       type: Types.ObjectId,
+  //       order: [{ type: Types.ObjectId, ref: "products" }],
+  //     },
+  //   ],
   address: {
     country: String,
     city: String,
     street: String,
     house: String,
     zipcode: String,
-    flat: Number,
+    flat: String,
   },
   username: { type: String, unique: true, required: true },
   password: { type: String, required: true },
-  cart: [{ ref: "products" }],
+  cart: Types.Array({ ref: "products", type: Types.ObjectId }),
 });
 
 module.exports = model("users", userSchema);

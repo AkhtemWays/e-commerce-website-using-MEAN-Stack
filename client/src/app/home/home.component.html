@@ -1,0 +1,85 @@
+<div class="container">
+  <div
+    infiniteScroll
+    [infiniteScrollDistance]="2"
+    [infiniteScrollThrottle]="50"
+  >
+    <h1
+      [ngStyle]="{
+        color: '#f70592',
+        'font-size': '41px',
+        'font-weight': 'bold',
+        'text-align': 'center',
+        margin: '1em auto'
+      }"
+    >
+      Bestsellers
+    </h1>
+    <div class="row pb-5 m-5" *ngIf="loading">
+      <div class="col-md-12 p-5">
+        <ngx-spinner
+          bdOpacity="0.9"
+          bdColor=""
+          size="default"
+          color="#581f87"
+          type="ball-pulse-sync"
+          [fullScreen]="loading"
+        >
+        </ngx-spinner>
+      </div>
+    </div>
+    <div class="cards" *ngFor="let product of bestsellerProducts">
+      <div class="card" (click)="redirect(product[0]._id)">
+        <div>
+          <h2 class="name">
+            {{ product[0].name }}
+          </h2>
+          <img
+            src="{{ getBrandLocation(product[0].brand) }}"
+            alt="no image"
+            id="brand-img"
+          />
+        </div>
+        <div>
+          <img
+            src="{{ product[0].image }}"
+            alt="no image"
+            class="card__image"
+          />
+        </div>
+        <div class="content">
+          <h4 class="description">{{ product[0].description }}</h4>
+          <div class="card__info">
+            <h4 class="price">{{ product[0].price }}$</h4>
+          </div>
+        </div>
+      </div>
+      <div class="card" (click)="redirect(product[1]._id)">
+        <div>
+          <h2 class="name">
+            {{ product[1].name }}
+          </h2>
+          <img
+            src="{{ getBrandLocation(product[1].brand) }}"
+            alt="no image"
+            id="brand-img"
+          />
+        </div>
+        <div>
+          <img
+            src="{{ product[1].image }}"
+            alt="no image"
+            class="card__image"
+          />
+        </div>
+        <div class="content">
+          <h4 class="description">{{ product[1].description }}</h4>
+          <div class="card__info">
+            <h4 class="price">{{ product[1].price }}$</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>

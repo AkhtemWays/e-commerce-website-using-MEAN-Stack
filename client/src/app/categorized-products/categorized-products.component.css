@@ -1,0 +1,36 @@
+.ctg-products {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2em;
+  font-style: italic;
+}
+.ctg-products__card {
+  margin: 1em 0;
+  cursor: pointer;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+  background: #fcfcf5;
+}
+.ctg-products__name {
+  font-size: 24px;
+  font-weight: bold;
+  padding: 4px;
+}
+.ctg-products__card img {
+  width: 100%;
+  height: 250px;
+}
+.ctg-products__top_field {
+  display: flex;
+  justify-content: space-evenly;
+}
+.ctg-products__top_field h6 {
+  padding: 5px;
+  margin-top: 4px;
+}
+.common {
+  padding: 4px;
+  margin-left: 3px;
+  font-size: 18px;
+  font-weight: bolder;
+  font-family: Arial;
+}

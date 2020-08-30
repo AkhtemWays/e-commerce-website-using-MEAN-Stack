@@ -1,0 +1,63 @@
+<div class="container">
+  <table class="table">
+    <thead class="thead-dark">
+      <th scope="col">Product name</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Price</th>
+      <th scope="col">Shipping details</th>
+      <th scope="col"></th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of service.currentUser.cart | filterUnique">
+        <td>
+          <div>
+            <img
+              src="{{ product?.image }}"
+              alt="no image"
+              class="cart__image"
+            />
+            <h6 class="cart__product_name">{{ product?.name }}</h6>
+          </div>
+        </td>
+        <td>
+          <p>{{ idToQuantity[product?._id] }} / peace(s)</p>
+        </td>
+        <td>
+          <p>
+            {{
+              getPriceWithDiscount(product.price, product.discount) *
+                idToQuantity[product?._id]
+            }}$
+          </p>
+        </td>
+        <td>
+          <p>Shipping fee: {{ product?.shipping_fee }}$</p>
+        </td>
+        <td>
+          <button class="cart__remove_button" (click)="remove(product)">
+            Remove
+          </button>
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>Subtotal: {{ subTotal }}$</td>
+        <td>Shipping: {{ totalShipping }}$</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td [ngStyle]="{ color: 'green' }">
+          Total: {{ subTotal + totalShipping }}$
+        </td>
+      </tr>
+      <button class="cart__checkout" (click)="goToCheckout()">
+        Proceed to checkout
+      </button>
+    </tbody>
+  </table>
+</div>

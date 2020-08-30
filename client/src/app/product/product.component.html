@@ -1,0 +1,64 @@
+<div class="container">
+  <div class="product">
+    <div class="product__top_field">
+      <h4 class="product__name">{{ product?.name }}</h4>
+      <img
+        src="{{ getImageLocation(product?.brand) }}"
+        alt="no image"
+        class="product__brand"
+      />
+    </div>
+    <img src="{{ product?.image }}" alt="image field" class="product__image" />
+    <h4 class="product__description">{{ product?.description }}</h4>
+    <div class="product__bottom_field">
+      <div class="product__discount" *ngIf="product?.discount">
+        <h4 class="product__price" [ngStyle]="{ float: 'right' }">
+          {{ getPriceWithDiscount(product?.price, product?.discount) }}$
+        </h4>
+        <h4
+          class="product__price"
+          [ngStyle]="{
+            'text-decoration': 'line-through',
+            display: 'inline-block'
+          }"
+        >
+          {{ product?.price }}$
+        </h4>
+      </div>
+      <div class="product__discount" *ngIf="!product?.discount">
+        <h4 class="product__price">{{ product?.price }}$</h4>
+      </div>
+      <div>
+        <h4
+          *ngIf="product?.availability"
+          class="product__stock"
+          [ngStyle]="{ color: 'green' }"
+        >
+          In stock
+        </h4>
+        <h4
+          *ngIf="!product?.availability"
+          class="product__stock"
+          [ngStyle]="{ color: 'red' }"
+        >
+          Out of stock
+        </h4>
+        <h4 class="product__shipping_fee">
+          Shipping fee: {{ product?.shipping_fee }}$
+        </h4>
+      </div>
+      <div>
+        <h2 class="product__bestseller" *ngIf="product?.bestseller">
+          BESTSELLER!
+        </h2>
+        <button
+          *ngIf="isAuthorized"
+          class="product__cart"
+          (click)="addToCart(product)"
+        >
+          Add to cart
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
